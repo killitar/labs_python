@@ -11,7 +11,7 @@ for s2, a in enumerate(reversed(elements)):
         break  # оиндекс последнего положительного элемента
 s = sum(elements[s1+1: -s2-1])  # сумму между индексами
 print(s)
-
+t6FpLlGv st104649@ruc.su
 
 
 res = sorted(elements, key = lambda i: 0 if i == 0 else -1 / i)
