@@ -21,3 +21,25 @@ else:
 fh.close()
 
 #2
+import math
+
+print("Введите координаты x,y,r")
+
+fh = open("laba_2","r")
+r = float(fh.readline())
+x = float(fh.readline())
+y = float(fh.readline())
+
+if(
+    x <= 2
+    and x>=-2
+    and y<=2
+    and y>= -2
+    and y>= math.pow((x-r),2) + pow((y+r),2)+r**2
+    and x>=math.pow((x+r),2) + pow((y-r),2) +r**2
+    
+):
+    print("Попадает")
+else:
+    print("Не попадает")
+fh.close()
