@@ -1,5 +1,4 @@
-
-#t6FpLlGv st104649@ruc.su
+\
 import math
 # fx = open("laba_1","w")
 fh = open("laba_1","r")
