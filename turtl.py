@@ -1,4 +1,5 @@
-import math
+
+import t6FpLlGv st104649@ruc.su
 import turtle as tr
 
 
