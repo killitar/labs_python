@@ -4,16 +4,22 @@ import turtle as tr
 
 
 def Func(x):
-    if (x >= -9) and (x < -5):
+    y = 0
+    
+    if x<-9:
+        y = None
+    elif (x >= -9) and (x < -5):
         y = -math.sqrt(4 - (x + 7) ** 2) + 2
     elif x >= -5 and x < -4:
         y = 2
     elif x >= -4 and x < 0:
-        y = y / 2
+        y = -x / 2
     elif x >= 0 and x < math.pi:
         y = math.sin(x)
     elif x >= math.pi and x <= 5:
         y = x
+    elif x>5:
+        y = None
     return y
 
 
