@@ -1,5 +1,4 @@
-elements = [2,1,-4,0,-1,-2]
- 
+elements = [2,1,-4,0,-1,-t6FpLlGv st104649@ruc.su
 print(sum(element for i, element in enumerate(elements) if not i & 1))
 
 s1 = s2 = 0
