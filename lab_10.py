@@ -4,19 +4,19 @@ from tkinter.messagebox import *
 root = Tk()
 
 root.minsize(width=350, height=150)
-root.maxsize(width=500, height=300)
+root.maxsize(width=750, height=300)
 root.title("Калькулятор")
 
-fr_xy = Frame(root)
+fr_xy = Frame(root, background="black")
 fr_xy.pack(side=TOP, expand=YES, fill=X)
-lx = Label(fr_xy, text="x = ")
+lx = Label(fr_xy, text="x = ", foreground="blue")
 lx.pack(side=LEFT, padx=10, pady=10)
 entX = Entry(fr_xy)
 entX.insert(0, 0)
 entX.pack(side=LEFT, padx=10, pady=10)
 entX.focus()
 
-ly = Label(fr_xy, text="y = ")
+ly = Label(fr_xy, text="y = ", foreground="blue")
 ly.pack(side=LEFT, padx=10, pady=10)
 entY = Entry(fr_xy)
 entY.insert(0, 0)
@@ -25,11 +25,11 @@ entY.pack(side=LEFT, padx=10, pady=10)
 fr_op = LabelFrame(root, text="Операция")
 fr_op.pack(side=TOP, expand=YES, fill=X)
 
-oper = ["+", "-", "*", "/", "√x", "y^2"]
+oper = ["+", "-", "*", "/", "//", "%", "√x", "y^2"]
 varOper = StringVar()
 
 for op in oper:
-    Radiobutton(fr_op, text=op, variable=varOper, value=op).pack(
+    Radiobutton(fr_op, text=op, variable=varOper, value=op, cursor="target").pack(
         side=LEFT, padx=20, pady=10
     )
 varOper.set(oper[0])
@@ -62,6 +62,16 @@ def onButtonResult():
             res = x / y
         else:
             res = "NaN"
+    elif op == "//":
+        if y != 0:
+            res = x // y
+        else:
+            res = "NaN"
+    elif op == "%":
+        if y != 0:
+            res = x % y
+        else:
+            res = "NaN"
     elif op == "√x":
         res = x ** (0.5)
     elif op == "y^2":
@@ -71,7 +81,7 @@ def onButtonResult():
     lres["text"] = res
 
 
-Button(fr_res, text="=", width=10, command=onButtonResult).pack(
+Button(fr_res, text="=", width=10, command=onButtonResult, cursor="target").pack(
     side=LEFT, padx=30, pady=20
 )
 lres = Label(fr_res, text="")
