@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS movies (
   title VARCHAR(100) NOT NULL UNIQUE, 
   year INTEGER NOT NULL,
   image_url VARCHAR(255) NOT NULL,
-  runtime INT,
+  runtime INT
   
 );
 """
